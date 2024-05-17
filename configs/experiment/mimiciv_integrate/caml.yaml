@@ -1,0 +1,25 @@
+# @package _global_
+defaults:
+  - override /model: caml
+  - override /text_encoder: word2vec.yaml
+  - override /data: mimiciv_integrate
+  - override /lr_scheduler: warmup_linear_decay
+  - override /optimizer: adamw
+  - override /callbacks: mean_average_precision
+  
+optimizer:
+  configs:
+    lr: 5e-3
+    weight_decay: 1e-3
+
+trainer:
+  threshold_tuning: true
+  epochs: 20
+  validate_on_training_data: false
+  print_metrics: true
+
+dataloader:
+  max_batch_size: 16
+  batch_size: 8
+
+data_max_length: 4000

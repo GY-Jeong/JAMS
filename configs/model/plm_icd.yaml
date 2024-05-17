@@ -1,0 +1,3 @@
+name: PLMICD
+configs:
+  model_path: /home/gy/workspace/AMC/medical-coding-reproducibility/lm/RoBERTa-base-PM-M3-Voc-hf
